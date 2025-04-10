@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhaseFlow - Marketing Agency Project Management</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="font-inter bg-slate-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-poppins font-bold text-blue-600">PhaseFlow</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-slate-600 hover:text-blue-600">Features</a>
+                    <a href="#how-it-works" class="text-slate-600 hover:text-blue-600">How it Works</a>
+                    <a href="#contact" class="text-slate-600 hover:text-blue-600">Contact</a>
+                    <a href="login.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Login</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-slate-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+                <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                    <div class="sm:text-center lg:text-left">
+                        <h1 class="text-4xl tracking-tight font-bold text-slate-900 sm:text-5xl md:text-6xl font-poppins">
+                            <span class="block">Streamline Your</span>
+                            <span class="block text-blue-600">Marketing Projects</span>
+                        </h1>
+                        <p class="mt-3 text-base text-slate-600 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                            Manage your marketing campaigns with ease. Track phases, objectives, and client progress all in one place.
+                        </p>
+                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                            <div class="rounded-md shadow">
+                                <a href="login.html" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10">
+                                    Get Started
+                                </a>
+                            </div>
+                            <div class="mt-3 sm:mt-0 sm:ml-3">
+                                <a href="#how-it-works" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-blue-600 bg-blue-50 hover:bg-blue-100 md:py-4 md:text-lg md:px-10">
+                                    Learn More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+            <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Team working on marketing strategy">
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div id="features" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase font-poppins">Features</h2>
+                <p class="mt-2 text-3xl leading-8 font-bold tracking-tight text-slate-900 sm:text-4xl font-poppins">
+                    Everything you need to manage your marketing projects
+                </p>
+            </div>
+
+            <div class="mt-10">
+                <div class="space-y-10 md:space-y-0 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-10">
+                    <!-- Feature 1 -->
+                    <div class="relative">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                            <i class="fas fa-tasks text-xl"></i>
+                        </div>
+                        <p class="ml-16 text-lg leading-6 font-medium text-slate-900">Phase Tracking</p>
+                        <p class="mt-2 ml-16 text-base text-slate-500">
+                            Track project phases and milestones with our intuitive interface.
+                        </p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="relative">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                            <i class="fas fa-users text-xl"></i>
+                        </div>
+                        <p class="ml-16 text-lg leading-6 font-medium text-slate-900">Client Management</p>
+                        <p class="mt-2 ml-16 text-base text-slate-500">
+                            Manage multiple clients and their projects in one central location.
+                        </p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="relative">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                            <i class="fas fa-chart-line text-xl"></i>
+                        </div>
+                        <p class="ml-16 text-lg leading-6 font-medium text-slate-900">Progress Analytics</p>
+                        <p class="mt-2 ml-16 text-base text-slate-500">
+                            Get detailed insights and analytics on project progress.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- How it Works Section -->
+    <div id="how-it-works" class="py-12 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase font-poppins">How it Works</h2>
+                <p class="mt-2 text-3xl leading-8 font-bold tracking-tight text-slate-900 sm:text-4xl font-poppins">
+                    Simple and effective project management
+                </p>
+            </div>
+
+            <div class="mt-10">
+                <div class="space-y-10 md:space-y-0 md:grid md:grid-cols-4 md:gap-x-8 md:gap-y-10">
+                    <!-- Step 1 -->
+                    <div class="relative">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 mb-4">
+                            <span class="text-lg font-bold">1</span>
+                        </div>
+                        <h3 class="text-lg font-medium text-slate-900 mb-2">Create Project</h3>
+                        <p class="text-base text-slate-500">Set up your marketing project and define key objectives.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 mb-4">
+                            <span class="text-lg font-bold">2</span>
+                        </div>
+                        <h3 class="text-lg font-medium text-slate-900 mb-2">Define Phases</h3>
+                        <p class="text-base text-slate-500">Break down the project into manageable phases.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 mb-4">
+                            <span class="text-lg font-bold">3</span>
+                        </div>
+                        <h3 class="text-lg font-medium text-slate-900 mb-2">Track Progress</h3>
+                        <p class="text-base text-slate-500">Monitor progress and update phase status in real-time.</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="relative">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 mb-4">
+                            <span class="text-lg font-bold">4</span>
+                        </div>
+                        <h3 class="text-lg font-medium text-slate-900 mb-2">Achieve Goals</h3>
+                        <p class="text-base text-slate-500">Complete objectives and deliver successful campaigns.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="bg-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-slate-900 font-poppins">Ready to get started?</h2>
+                <p class="mt-4 text-lg text-slate-500">
+                    Contact us today to learn how we can help streamline your marketing projects.
+                </p>
+                <div class="mt-8">
+                    <a href="login.html" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700">
+                        Get Started Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <span class="text-2xl font-bold text-white font-poppins">PhaseFlow</span>
+                    <p class="mt-2 text-slate-400">
+                        Streamline your marketing projects with our comprehensive project management solution.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-slate-400 tracking-wider uppercase">Quick Links</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#features" class="text-base text-slate-300 hover:text-white">Features</a></li>
+                        <li><a href="#how-it-works" class="text-base text-slate-300 hover:text-white">How it Works</a></li>
+                        <li><a href="#contact" class="text-base text-slate-300 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-slate-400 tracking-wider uppercase">Connect</h3>
+                    <div class="mt-4 flex space-x-6">
+                        <a href="#" class="text-slate-400 hover:text-slate-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-slate-300">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-slate-300">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-slate-700 pt-8">
+                <p class="text-base text-slate-400 text-center">
+                    © 2024 PhaseFlow. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+</html>
