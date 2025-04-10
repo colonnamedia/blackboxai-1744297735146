@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - PhaseFlow</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="font-inter bg-slate-50 min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-poppins font-bold text-blue-600">PhaseFlow</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Form -->
+    <div class="flex-grow flex items-center justify-center px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8 bg-white p-8 rounded-xl shadow-lg">
+            <div>
+                <h2 class="mt-6 text-center text-3xl font-bold text-slate-900 font-poppins">
+                    Welcome back
+                </h2>
+                <p class="mt-2 text-center text-sm text-slate-600">
+                    Sign in to your account to continue
+                </p>
+            </div>
+            <form class="mt-8 space-y-6" id="loginForm">
+                <div class="rounded-md shadow-sm space-y-4">
+                    <div>
+                        <label for="email" class="sr-only">Email address</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-envelope text-slate-400"></i>
+                            </div>
+                            <input id="email" name="email" type="email" required 
+                                class="appearance-none rounded-lg relative block w-full pl-10 pr-3 py-2 border border-slate-300 placeholder-slate-500 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm" 
+                                placeholder="Email address">
+                        </div>
+                        <p id="emailError" class="mt-1 text-sm text-red-600 hidden">Please enter a valid email address</p>
+                    </div>
+                    <div>
+                        <label for="password" class="sr-only">Password</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-lock text-slate-400"></i>
+                            </div>
+                            <input id="password" name="password" type="password" required 
+                                class="appearance-none rounded-lg relative block w-full pl-10 pr-3 py-2 border border-slate-300 placeholder-slate-500 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm" 
+                                placeholder="Password">
+                        </div>
+                        <p id="passwordError" class="mt-1 text-sm text-red-600 hidden">Password must be at least 6 characters</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input id="remember-me" name="remember-me" type="checkbox" 
+                            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-slate-300 rounded">
+                        <label for="remember-me" class="ml-2 block text-sm text-slate-900">
+                            Remember me
+                        </label>
+                    </div>
+
+                    <div class="text-sm">
+                        <a href="#" class="font-medium text-blue-600 hover:text-blue-500">
+                            Forgot your password?
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit" 
+                        class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                            <i class="fas fa-sign-in-alt text-blue-500 group-hover:text-blue-400"></i>
+                        </span>
+                        Sign in
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-sm text-slate-500">
+                © 2024 PhaseFlow. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Reset error messages
+            document.getElementById('emailError').classList.add('hidden');
+            document.getElementById('passwordError').classList.add('hidden');
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            let isValid = true;
+
+            // Email validation
+            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                document.getElementById('emailError').classList.remove('hidden');
+                isValid = false;
+            }
+
+            // Password validation
+            if (!password || password.length < 6) {
+                document.getElementById('passwordError').classList.remove('hidden');
+                isValid = false;
+            }
+
+            // If form is valid, attempt login
+            if (isValid) {
+                const success = await window.app.auth.login(email, password);
+                if (success) {
+                    window.app.ui.showNotification('Login successful!', 'success');
+                    window.location.href = 'dashboard.html';
+                } else {
+                    window.app.ui.showNotification('Invalid credentials', 'error');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
